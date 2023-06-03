@@ -14,9 +14,10 @@ std::vector<char> getPerm(const Tree& tree, int n) {
         return {};
     if (tree.getCharacter_set() == '*')
         n--;
-    std::vector<char> resl;
+    std::vector<char> res;
     int temp = fact(tree.getSize() - 1);
-    resl.push_back(tree[n / temp].getCharacter_set());
-    std::vector<char> b = getPerm(tree[n / temp], n % temp);
-    resl.insert(resl.end(), b.begin(), b.end());
-    return resl;
+    res.push_back(tree[n / temp].getCharacter_set());
+    std::vector<char> c = getPerm(tree[n / temp], n % temp);
+    res.insert(res.end(), c.begin(), c.end());
+    return res;
+}
