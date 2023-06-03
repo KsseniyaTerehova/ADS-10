@@ -18,6 +18,7 @@ class Tree {
     int getSize() const {
         return option->options.size();
     }
+
  private:
     struct Node {
     char character_set;
@@ -29,12 +30,11 @@ class Tree {
         option->character_set = character_set;
     }
     void produce(const std::vector<char>& r) {
-        for (int n = 0; n < r.size(); n++) {
+        for (int n = 0; n < row.size(); n++) {
             std::vector<char> t = r;
-            option->options.push_back(new Tree(t[n]));
-            t.erase(t.begin() + n);
-            option->options[n]->produce(t);
+            option->options.push_back(new Tree(t[r]));
+            t.erase(t.begin() + i);
+            option->options[i]->produce(t);
         }
     }
- };
- #endif  // INCLUDE_TREE_H_
+};
