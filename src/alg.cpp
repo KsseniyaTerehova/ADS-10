@@ -5,7 +5,7 @@
 #include  <cstdlib>
 #include  "tree.h"
 
-int factorial(int s) {
+int fact(int s) {
     if (s > 1)
       return s * fact(s - 1);
     return 1;
