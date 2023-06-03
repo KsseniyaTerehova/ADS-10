@@ -4,10 +4,10 @@
 #include <vector>
 class Tree {
  public:
-    explicit Tree(const std::vector<char>& r) {
+    explicit Tree(const std::vector<char>& row) {
         option = new Node;
         option->character_set = '*';
-        produce(r);
+        produce(row);
     }
     Tree& operator[](int n) const {
         return *option->options[n];
@@ -29,12 +29,13 @@ class Tree {
         option = new Node;
         option->character_set = character_set;
     }
-    void produce(const std::vector<char>& r) {
-        for (int q = 0; q < r.size(); q++) {
-            std::vector<char> temp = r;
+    void produce(const std::vector<char>& row) {
+        for (int q = 0; q < row.size(); q++) {
+            std::vector<char> temp = row;
             option->options.push_back(new Tree(temp[q]));
             temp.erase(temp.begin() + q);
             option->options[q]->produce(temp);
         }
     }
 };
+#endif  // INCLUDE_TREE_H_
