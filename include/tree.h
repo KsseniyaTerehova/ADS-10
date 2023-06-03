@@ -9,8 +9,8 @@ class Tree {
         option->character_set = '*';
         produce(r);
     }
-    Tree& operator[](int k) const {
-        return *option->options[k];
+    Tree& operator[](int n) const {
+        return *option->options[n];
     }
     char getCharacter_set() const {
         return option->character_set;
@@ -30,11 +30,11 @@ class Tree {
         option->character_set = character_set;
     }
     void produce(const std::vector<char>& r) {
-        for (int n = 0; n < row.size(); n++) {
+        for (int q = 0; q < row.size(); q++) {
             std::vector<char> t = r;
-            option->options.push_back(new Tree(t[r]));
-            t.erase(t.begin() + n);
-            option->options[n]->produce(t);
+            option->options.push_back(new Tree(t[q]));
+            t.erase(temp.begin() + q);
+            option->options[i]->produce(t);
         }
     }
 };
