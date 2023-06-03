@@ -18,7 +18,6 @@ class Tree {
     int getSize() const {
         return option->options.size();
     }
- 
  private:
     struct Node {
     char character_set;
@@ -38,4 +37,4 @@ class Tree {
         }
     }
  };
-#endif  // INCLUDE_TREE_H_
+ #endif  // INCLUDE_TREE_H_
