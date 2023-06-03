@@ -34,7 +34,7 @@ class Tree {
             std::vector<char> temp = r;
             option->options.push_back(new Tree(temp[q]));
             temp.erase(temp.begin() + q);
-            option->options[q]->produce(t);
+            option->options[q]->produce(temp);
         }
     }
 };
