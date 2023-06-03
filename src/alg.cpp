@@ -17,6 +17,6 @@ std::vector<char> getPerm(const Tree& tree, int n) {
     std::vector<char> resl;
     int temp = fact(tree.getSize() - 1);
     resl.push_back(tree[n / temp].getCharacter_set());
-    std::vector<char> b = getPerm(tree[n / t], n % t);
+    std::vector<char> b = getPerm(tree[n / temp], n % temp);
     resl.insert(resl.end(), b.begin(), b.end());
-    return res;
+    return resl;
