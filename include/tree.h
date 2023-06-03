@@ -37,5 +37,5 @@ class Tree {
             option->options[n]->produce(t);
         }
     }
-};
+ };
 #endif  // INCLUDE_TREE_H_
