@@ -33,8 +33,8 @@ class Tree {
         for (int n = 0; n < row.size(); n++) {
             std::vector<char> t = r;
             option->options.push_back(new Tree(t[r]));
-            t.erase(t.begin() + i);
-            option->options[i]->produce(t);
+            t.erase(t.begin() + n);
+            option->options[n]->produce(t);
         }
     }
 };
