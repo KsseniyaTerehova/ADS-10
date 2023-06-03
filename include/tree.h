@@ -31,7 +31,7 @@ class Tree {
     }
     void produce(const std::vector<char>& r) {
         for (int n = 0; n < r.size(); n++) {
-            std::vector<char> t = row;
+            std::vector<char> t = r;
             option->options.push_back(new Tree(t[n]));
             t.erase(t.begin() + n);
             option->options[n]->produce(t);
