@@ -30,11 +30,11 @@ class Tree {
         option->character_set = character_set;
     }
     void produce(const std::vector<char>& r) {
-        for (int n = 0; n < row.size(); n++) {
+        for (int n = 0; n < r.size(); n++) {
             std::vector<char> t = row;
             option->options.push_back(new Tree(t[n]));
-            t.erase(temp.begin() + n);
-            option->options[i]->produce(t);
+            t.erase(t.begin() + n);
+            option->options[n]->produce(t);
         }
     }
 };
