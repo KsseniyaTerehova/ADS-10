@@ -31,10 +31,10 @@ class Tree {
     }
     void produce(const std::vector<char>& r) {
         for (int q = 0; q < r.size(); q++) {
-            std::vector<char> t = r;
-            option->options.push_back(new Tree(t[q]));
-            t.erase(t.begin() + q);
-            option->options[i]->produce(t);
+            std::vector<char> temp = r;
+            option->options.push_back(new Tree(temp[q]));
+            temp.erase(temp.begin() + q);
+            option->options[q]->produce(t);
         }
     }
 };
