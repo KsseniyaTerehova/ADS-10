@@ -3,20 +3,20 @@
 #include  <cstdlib>
 #include  "tree.h"
 
-int fact(int s) {
-    if (s > 1)
-      return s * fact(s - 1);
+int fact(int n) {
+    if (n > 1)
+      return n * fact(n - 1);
     return 1;
 }
-std::vector<char> getPerm(const Tree& tree, int s) {
-  if (tree.getSize() == 0 || s > fact(tree.getSize()))
+std::vector<char> getPerm(const Tree& tree, int n) {
+  // напишите реализацию
+    if (tree.getSize() == 0 || n > fact(tree.getSize()))
         return {};
     if (tree.getCharacter_set() == '*')
-        s--;
-    std::vector<char> r;
-    int t = fact(tree.getSize() - 1);
-    r.push_back(tree[s / t].getCharacter_set());
-    std::vector<char> c = getPerm(tree[s / t], s % t);
-    r.insert(r.end(), c.begin(), c.end());
-    return r;
-}
+        n--;
+    std::vector<char> resl;
+    int temp = fact(tree.getSize() - 1);
+    resl.push_back(tree[n / t].getCharacter_set());
+    std::vector<char> b = getPerm(tree[n / t], n % t);
+    resl.insert(resl.end(), b.begin(), b.end());
+    return resl;
